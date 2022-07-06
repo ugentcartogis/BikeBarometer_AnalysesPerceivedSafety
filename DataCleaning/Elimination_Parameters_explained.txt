@@ -1,0 +1,5 @@
+input_file 			# str - Path to the csv file containing the original data
+	"Datasets_routes/DataFietsbarometerVL_200617/DataSelection_200617_all.csv"
+
+elimination file		# str - Path to the csv file containing the records to delete
+	"Datasets_routes/DataFietsbarometerVL_200617/DataCleaning_RecordsToEliminate.csv"

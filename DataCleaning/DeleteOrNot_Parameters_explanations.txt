@@ -1,0 +1,2 @@
+csv_file 			# str - Path to the csv file containing the records to clean
+	"Datasets_routes/DataFietsbarometerVL_200617/RecordsToClean.csv"

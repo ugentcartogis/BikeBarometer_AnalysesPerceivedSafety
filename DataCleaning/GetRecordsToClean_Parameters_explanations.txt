@@ -1,0 +1,33 @@
+orig_data_filename 			# str - Path to the csv file
+	"Datasets_routes/DataFietsbarometerVL_200617/DataSelection_200617_all.csv"
+
+table 					# str - Table from database sien that contains the data on which the queries will be run
+	"alldata_200617"
+
+error_definitions			# dict - Dictionary with the error definitions to be put in the WHERE clause for the hard and the soft errors
+	{"hard_errors": ["age > 21", "postal_code > 9999", "postal_code < 1000",
+                         "estimated_dist_byfoot > 10", "estimated_dist_bicycle > 30",
+			 "estimated_dist_car > 100", "estimated_dist_bus > 50",
+			 "estimated_dist_train > 100", "estimated_dist_motorbike > 50",
+			 "estimated_dist_other > 50", "estimated_dist_total > 100",
+			 "duration > 120"],
+          "soft_errors": ["age > 20", "estimated_dist_byfoot > 5", "estimated_dist_bicycle > 20"]}
+
+regular					# bool (no capital letters) - Will the query be based on the table given in the 'table' variable (True) or not (False)
+	false
+
+query					# str - Query that is not based on the table given in the 'table' variable
+	"""
+	SELECT *
+	FROM alldata_200617 d, (SELECT * FROM dblink('host=xxx
+	   	user=xxx
+	      	password=xxx
+	      	dbname=xxx',
+		'SELECT gid, geom FROM schools') AS schools(gid int, geom geometry)) as s
+	WHERE d.school_id = s.gid
+	AND st_distance(d.route_assessed_geom, st_transform(s.geom, 31370)) > 5000
+	ORDER BY d.student_id;
+	"""
+
+query_var 				# bool - Boolean stating whether to use the student_ids as query variables
+	false
