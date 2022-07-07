@@ -28,21 +28,12 @@ rm(list=ls())
 # POINTS #
 ##########
 
-#### TO DO
-# Gender = other niet mee integreren in dataset
-# Nieuw full model enkel met relevante termen
-# Zoek naar random effect
-# Bekijk resultaten full model
-# Niet-significante termen afbouwen (telkens deze met hoogste p-waarde weglaten) + AIC's vergelijken
-# Model met enkel significante termen en laagste AIC overhouden
-# Assumpties en predicties checken
-
 
 ### Load data ###
 #################
 
 ### Load data
-points <- read.csv('C:/Users/Sien Benoit/OneDrive - UGent/Werk_UGent/Doctoraat/Datasets_routes/DataFietsbarometerVL_210402/08_dataset_points_210402.csv', fileEncoding="UTF-8-BOM")
+points <- read.csv('08_dataset_points_210402.csv', fileEncoding="UTF-8-BOM")
 
 # Keep only necessary columns
 points <- points[,c(1,2,5,6,8,28:40), drop=FALSE]

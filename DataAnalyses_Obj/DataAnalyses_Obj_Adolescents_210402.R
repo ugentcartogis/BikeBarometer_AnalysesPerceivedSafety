@@ -28,23 +28,12 @@ rm(list=ls())
 # ADOLESCENTS #
 ###############
 
-#### TO DO
-# OK Gender = other niet mee integreren in dataset
-# OK Nieuw full model enkel met relevante termen
-# OK Zoek naar random effect
-# OK Bekijk resultaten full model
-# OK Niet-significante termen afbouwen (telkens deze met hoogste p-waarde weglaten) + AIC's vergelijken
-# OK Model met enkel significante termen en laagste AIC overhouden
-# OK Assumpties en predicties checken
-# Factoranalyse doen want veel dimensies (maar niet gebruiken)
-# OK Forward / Backward selectie doen uit interesse
-
 
 ### Load data ###
 #################
 
 ### Load data
-adolescents <- read.csv('C:/Users/Sien Benoit/OneDrive - UGent/Werk_UGent/Doctoraat/Datasets_routes/DataFietsbarometerVL_210402/08_dataset_adolescents_210402.csv', fileEncoding="UTF-8-BOM")
+adolescents <- read.csv('08_dataset_adolescents_210402.csv', fileEncoding="UTF-8-BOM")
 
 # Remove unnecessary columns
 adolescents <- adolescents[,c(1,2,3,6,8,13,16,19,20,31:57), drop=FALSE]

@@ -26,22 +26,11 @@ rm(list=ls())
 # POINTS #
 ##########
 
-#### TO DO
-# OK Gender = other niet mee integreren in dataset
-# OK Nieuw full model enkel met relevante termen
-# OK Zoek naar random effect
-# OK Bekijk resultaten full model
-# OK Niet-significante termen afbouwen (telkens deze met hoogste p-waarde weglaten) + AIC's vergelijken
-# OK Model met enkel significante termen en laagste AIC overhouden
-# OK Assumpties en predicties checken
-# Factoranalyse doen want veel dimensies (maar niet gebruiken)
-# OK Forward / Backward selectie doen uit interesse
-
 ### Load data ###
 #################
 
 # Load data
-points <- read.csv('C:/Users/Sien Benoit/OneDrive - UGent/Werk_UGent/Doctoraat/Datasets_routes/DataFietsbarometerVL_210402/06_dataset_points_210402.csv')
+points <- read.csv('06_dataset_points_210402.csv')
 
 # Delete records with 'gender = other'
 points <- points[!(points$gender=="other"),]

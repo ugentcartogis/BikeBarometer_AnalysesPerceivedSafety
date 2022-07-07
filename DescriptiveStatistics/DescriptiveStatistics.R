@@ -45,7 +45,7 @@ rm(list=ls())
 #################
 
 ### Load data
-adolescents <- read.csv('C:/Users/Sien Benoit/OneDrive - UGent/Werk_UGent/Doctoraat/Datasets_routes/DataFietsbarometerVL_210402/08_dataset_adolescents_210402.csv', fileEncoding="UTF-8-BOM")
+adolescents <- read.csv('08_dataset_adolescents_210402.csv', fileEncoding="UTF-8-BOM")
 
 # Delete records with 'gender = other'
 # adolescents <- adolescents[!(adolescents$gender=="other"),]
